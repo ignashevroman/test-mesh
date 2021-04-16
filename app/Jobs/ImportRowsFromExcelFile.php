@@ -21,8 +21,6 @@ class ImportRowsFromExcelFile implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
-    public $queue = 'upload-import';
-
     /**
      * @var string
      */

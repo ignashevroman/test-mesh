@@ -44,7 +44,7 @@ class RowController extends Controller
     {
         $path = optional($request->file('file'))->store('uploads');
 
-        ImportRowsFromExcelFile::dispatch($path);
+        ImportRowsFromExcelFile::dispatch($path)->onQueue('upload-import');
 
         return response()->json(null, Response::HTTP_NO_CONTENT);
     }
