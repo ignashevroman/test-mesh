@@ -9,7 +9,6 @@ use App\Events\RowsImported;
 use App\Imports\Contracts\RaiseEventOnFlushContract;
 use App\Models\Row;
 use Illuminate\Support\Facades\Log;
-use Maatwebsite\Excel\Concerns\RemembersRowNumber;
 use Maatwebsite\Excel\Concerns\ToModel;
 use Maatwebsite\Excel\Concerns\WithBatchInserts;
 use Maatwebsite\Excel\Concerns\WithCalculatedFormulas;
@@ -22,7 +21,6 @@ use PhpOffice\PhpSpreadsheet\Shared\Date;
  */
 class RowImport implements ToModel, WithBatchInserts, WithCalculatedFormulas, WithHeadingRow, RaiseEventOnFlushContract
 {
-    use RemembersRowNumber;
 
     /**
      * @var string
