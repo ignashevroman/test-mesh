@@ -7,6 +7,7 @@ namespace App\Proxy;
 use App\Imports\Contracts\RaiseEventOnFlushContract;
 use Maatwebsite\Excel\Concerns\ToModel;
 use Maatwebsite\Excel\Imports\ModelManager;
+use Maatwebsite\Excel\Validators\ValidationException;
 
 /**
  * Proxy for ModelManager with event raising after saving
@@ -16,6 +17,12 @@ use Maatwebsite\Excel\Imports\ModelManager;
  */
 final class ModelManagerProxy extends ModelManager
 {
+
+    /**
+     * @param ToModel $import
+     * @param bool $massInsert
+     * @throws ValidationException
+     */
     public function flush(ToModel $import, bool $massInsert = false): void
     {
         parent::flush($import, $massInsert);

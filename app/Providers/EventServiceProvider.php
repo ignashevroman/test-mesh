@@ -6,6 +6,10 @@ use App\Events\Contracts\ImportFlushEvent;
 use App\Listeners\SaveImportProgress;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 
+/**
+ * Class EventServiceProvider
+ * @package App\Providers
+ */
 class EventServiceProvider extends ServiceProvider
 {
     /**

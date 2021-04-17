@@ -32,7 +32,7 @@ class RowImport implements ToModel, WithBatchInserts, WithCalculatedFormulas, Wi
     /**
      * We use our own counter for rows to skip empty rows.
      * We cannot use SkipsEmptyRows with WithCalculatedFormulas
-     * because of an error (https://github.com/Maatwebsite/Laravel-Excel/issues/3127)
+     * because of an error. I did create an issue (https://github.com/Maatwebsite/Laravel-Excel/issues/3127)
      *
      * @var int
      */

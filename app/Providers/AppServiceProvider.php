@@ -8,6 +8,10 @@ use Illuminate\Support\ServiceProvider;
 use Maatwebsite\Excel\Imports\ModelImporter;
 use Maatwebsite\Excel\Validators\RowValidator;
 
+/**
+ * Class AppServiceProvider
+ * @package App\Providers
+ */
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -28,8 +32,11 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         // Bind our proxy ModelImporter class to be able to raise events
-        $this->app->bind(ModelImporter::class, static function (Application $app) {
-            return new ModelImporter(new ModelManagerProxy($app->make(RowValidator::class)));
-        });
+        $this->app->bind(
+            ModelImporter::class,
+            static function (Application $app) {
+                return new ModelImporter(new ModelManagerProxy($app->make(RowValidator::class)));
+            }
+        );
     }
 }

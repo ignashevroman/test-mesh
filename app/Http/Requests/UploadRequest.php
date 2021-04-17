@@ -32,7 +32,12 @@ class UploadRequest extends FormRequest
                 'file',
                 static function ($attribute, UploadedFile $value, $fail) {
                     if (!in_array($value->getClientOriginalExtension(), self::PERMITTED_EXTENSIONS, true)) {
-                        $fail(sprintf('File required one of %s extension', strtoupper(implode(', ', self::PERMITTED_EXTENSIONS))));
+                        $fail(
+                            sprintf(
+                                'File required one of %s extension',
+                                strtoupper(implode(', ', self::PERMITTED_EXTENSIONS))
+                            )
+                        );
                     }
                 }
             ],
