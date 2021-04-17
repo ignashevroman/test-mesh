@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\DB;
  * Class RowController
  * @package App\Http\Controllers
  */
-class RowController extends Controller
+class RowsController extends Controller
 {
 
     /**

@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\RowController;
+use App\Http\Controllers\RowsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +14,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::post('/upload', [RowController::class, 'upload']);
-Route::get('/rows', [RowController::class, 'index']);
+Route::post('/upload', [RowsController::class, 'upload']);
+Route::get('/rows', [RowsController::class, 'index']);
